@@ -21,7 +21,13 @@
     <app-navigation></app-navigation>
   <script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="main.js"></script></body>
   <script>
-    // SW Registration
+    if(navigator.serviceWorker) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('sw-handmade.js')
+          .then(registration => console.log(registration));
+      })
+    }
   </script>
 
   <script>
