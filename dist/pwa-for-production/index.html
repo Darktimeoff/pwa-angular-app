@@ -24,7 +24,7 @@
     if(navigator.serviceWorker) {
       window.addEventListener('load', () => {
         navigator.serviceWorker
-          .register('sw-handmade.js')
+          .register('sw-workbox.js')
           .then(registration => console.log(registration));
       })
     }
