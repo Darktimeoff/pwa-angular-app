@@ -16,3 +16,16 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([]);
 
 // RUNTIME CACHING
+
+// API with network-first strategy
+workbox.routing.registerRoute(
+    /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
+    workbox.strategies.networkFirst()
+)
+
+// API with cache-first strategy
+workbox.routing.registerRoute(
+    /(http[s]?:\/\/)?([^\/\s]+\/)favorites/,
+    workbox.strategies.cacheFirst()
+)
+  

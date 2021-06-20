@@ -20,7 +20,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "6dbc9695ab3c6d7a1cb7b47de9a1254c"
+    "revision": "9d855008ef95268c0838a815a7e851aa"
   },
   {
     "url": "styles.css",
@@ -73,3 +73,16 @@ workbox.precaching.precacheAndRoute([
 ]);
 
 // RUNTIME CACHING
+
+// API with network-first strategy
+workbox.routing.registerRoute(
+    /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
+    workbox.strategies.networkFirst()
+)
+
+// API with cache-first strategy
+workbox.routing.registerRoute(
+    /(http[s]?:\/\/)?([^\/\s]+\/)favorites/,
+    workbox.strategies.cacheFirst()
+)
+  

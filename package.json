@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-pwa": "ng build --prod --output-hashing none"
+    "build-pwa": "ng build --prod --output-hashing none && node workbox-build-inject.js"
   },
   "private": true,
   "dependencies": {
